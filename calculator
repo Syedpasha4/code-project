@@ -1,0 +1,40 @@
+# ai_calculator.py
+
+import math
+
+def ai_calculator():
+    print("🧠 AI/ML Engineer's Calculator")
+    print("Supported operations: add, subtract, multiply, divide, log, exp, sqrt, sigmoid")
+
+    while True:
+        op = input("\nOperation (or 'exit'): ").strip().lower()
+
+        if op == "exit":
+            break
+
+        if op in ["add", "subtract", "multiply", "divide"]:
+            a = float(input("Enter first number: "))
+            b = float(input("Enter second number: "))
+            if op == "add":
+                print("Result:", a + b)
+            elif op == "subtract":
+                print("Result:", a - b)
+            elif op == "multiply":
+                print("Result:", a * b)
+            elif op == "divide":
+                print("Result:", a / b if b != 0 else "Infinity")
+        elif op in ["log", "exp", "sqrt", "sigmoid"]:
+            x = float(input("Enter number: "))
+            if op == "log":
+                print("Result:", math.log(x))
+            elif op == "exp":
+                print("Result:", math.exp(x))
+            elif op == "sqrt":
+                print("Result:", math.sqrt(x))
+            elif op == "sigmoid":
+                print("Result:", 1 / (1 + math.exp(-x)))
+        else:
+            print("Unknown operation.")
+
+if _name_ == "_main_":
+    ai_calculator()
